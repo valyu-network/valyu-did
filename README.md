@@ -59,8 +59,6 @@ The server exposes three primary endpoints:
 - `POST /createDataDID` - Create a new data DID.
 - `POST /resolveDID` - Resolve an existing DID.
 
-These endpoints allow you to interact with the blockchain and manage DIDs efficiently.
-
 ## Postman API Documentation 📚
 
 For comprehensive API testing and documentation, access our Postman collection:
