@@ -1,10 +1,10 @@
 # ValyuDID
 
-Welcome to the ValyuDID repository! This project acts as an implementation of the Valyu DID method specification (outlined in DDOC.md), and facilitates the creation and resolution of Valyu DIDs using RESTful APIs, and a simple SQL database.
+Welcome to the ValyuDID repository. This project implements the Valyu DID method specification (detailed in DDOC.md) and provides RESTful APIs for creating and resolving Valyu DIDs, utilizing a straightforward SQL database architecture.
 
 ## Overview 📖
 
-ValyuDID provides a suite of endpoints to manage DIDs, enabling interactions such as creating new DIDs for users and data, and resolving existing DIDs through a custom-built Veramo-based resolver.
+ValyuDID offers a set of endpoints designed for managing decentralized identifiers (DIDs). It enables the creation of new DIDs for users and data, as well as the resolution of existing DIDs, using a custom-built resolver, and provider, based on the Veramo framework.
 
 ## Getting Started 🚀
 
@@ -71,7 +71,7 @@ This collection includes detailed requests and responses for each endpoint, help
 
 ### Docker Image 🐳
 
-For those interested in deploying using Docker, the Valyu-DID Docker image is available on DockerHub:
+For deploying using Docker, the Valyu-DID Docker image is available on DockerHub:
 
 [DockerHub: yorkeccak/valyu-did](https://hub.docker.com/repository/docker/yorkeccak/valyu-did/general)
 
