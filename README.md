@@ -69,12 +69,6 @@ For comprehensive API testing and documentation, access our Postman collection:
 
 This collection includes detailed requests and responses for each endpoint, helping you to effectively integrate and test the Valyu-DID APIs.
 
-### Docker Image 🐳
-
-For deploying using Docker, the Valyu-DID Docker image is available on DockerHub:
-
-[DockerHub: yorkeccak/valyu-did](https://hub.docker.com/repository/docker/yorkeccak/valyu-did/general)
-
 ### APIs Included in the Collection:
 
 - **Create Data DID (POST /createDataDID)**: Create a new data DID.
@@ -104,6 +98,12 @@ We welcome contributions from the community! Please follow these steps:
 - Use camelCase for variable names and function names.
 - Keep functions small and focused.
 - Document your code where necessary.
+
+### Docker Image 🐳
+
+For deploying using Docker, the Valyu-DID Docker image is available on DockerHub:
+
+[DockerHub: yorkeccak/valyu-did](https://hub.docker.com/repository/docker/yorkeccak/valyu-did/general)
 
 ## Docker Deployment 🐳
 
