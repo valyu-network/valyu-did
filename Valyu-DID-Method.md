@@ -1,14 +1,15 @@
 # The VALYU DID Method Specification 1.0
-### Abstract
+## Abstract
 The `did:valyu` DID method [DID-CORE](https://did-dht.com/#ref:DID-CORE) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used as part of a larger peer-to-peer fair data protocol.
 
-### Terminology
+## Terminology
 **Decentralized Identifier**
 - A [W3C specification](https://www.w3.org/TR/did-core/) describing an _identifier that enables verifiable, decentralized digital identity_. A DID identifier is associated with a JSON document containing cryptograhpic keys, services, and other properties outlined in the specification.
+
 **Data token**
 - An on-chain token representing ownership of the right to access / compute over a given dataset, under a specific policy. A data token is an implementation of the data tokenisation framework described in [DATA-TOKEN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590)
 
-### Format
+## Format
 The format for `did:valyu` conforms to the [DID-CORE](https://did-dht.com/#ref:DID-CORE) specification. It consists of the `did:valyu` prefix, followed by one of two types depending on whether the identifier is for a user, or data:
 - User: `user:<ethereum-address>`
 - Data: `data:<chain-id><data-token-address>`
@@ -39,10 +40,10 @@ did:valyu:user:0x9c8c0eA52F40daB8460353778f9b180Db33A4a9c
 did:valyu:user:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c
 ```
 
-### Status of the document
+## Status of the document
 This document is a draft version and the initial iteration of the Valyu DID specification, subject to refinement and expansion in subsequent releases to address broader use cases and integrate learned lessons.
 
-### Valyu DID Document Example
+## Valyu DID Document Example
 Example of a user DID Document:
 ```
 {
@@ -138,54 +139,54 @@ The DID Document represents a data object in the valyu network with the identifi
 	1. **Access Service**: Offers a direct link for accessing the data on the valyu network via a specific access key.
 	2. **Compute Service**: Provides a computing endpoint, facilitating operations or transformations on the data using a specific compute key.
 
-### Operations
+## Operations
 
 This following section outlines the DID operations for the `did:valyu` method
-#### Create
-##### DID creation algorithm
-###### Overview
+### Create
+#### DID creation algorithm
+##### Overview
 To create a `did:valyu`, use the DID creation service provided as part of the open-source Valyu-DID software (available in the following Github repository: www.github/valyu-networl/ValyuDID). This repository is well documented on the key generation process, and leverages Veramo.io. The process is as follows:
-###### Prerequisites
+##### Prerequisites
 - Docker installed on your machine. If Docker is not installed, follow the Docker installation guide.
-###### Steps
+##### Steps
 1. Pull the Valyu DID docker image from the dockerhub registry (details on how to do this are provided in: www.github/valyu-networl/ValyuDID)
 2. Run docker container
 3. Once the container is running, you can create a Valyu User or Data DID by calling the /createDID endpoint 
 
 **Note:** The API endpoints have thorough documentation, you can find the Postman collection in the Github repository under the /postman directory
-##### Document creation algorithm
+#### Document creation algorithm
 The DID creation process automatically creates a DID Document for each new DID created
 
-#### Read
-###### Overview
+### Read
+##### Overview
 To read/resolve a `did:valyu` value, use the DID resolution service provided as part of the open-source Valyu-DID software (available in the following Github repository: www.github/valyu-networl/ValyuDID)
-###### Prerequisites
+##### Prerequisites
 - Refer to prerequisites described in /DID-creation-algorithm
-###### Steps
+##### Steps
 1. Follow steps 1 and 2 described in /DID-creation-algorithm
 2. Once the container is running, you can resolve a `did:valyu` value into it's corresponding DID Document by calling the /resolveDID endpoint
 
 **Note:** The API endpoints have thorough documentation, you can find the Postman collection in the Github repository under the /postman directory
 
-#### Update
+### Update
 This method does not *currently* support updating the DID document
 
-#### Deactivate
+### Deactivate
 This method does not support deactivating the DID document
 
-### Security and Privacy Considerations
+## Security and Privacy Considerations
 When implementing and using the `did:valyu` method, there are several security and privacy considerations to be aware of to ensure expected and legitimate behaviour.
-###### Single DID restriction
+##### Single DID restriction
 The Valyu DID specification mandates a one-to-one mapping between a single Ethereum address and a Valyu DID. This constraint ensures that each Ethereum address is uniquely associated with only one Valyu DID, enhancing the clarity and integrity of identity management within the Valyu ecosystem.
-###### Personal identity information
+#### Personal identity information
 The Valyu DID method specification does not store any Personal Identifiable Information (PII) within DID documents. This policy ensures compliance with privacy regulations and reduces the risk of sensitive data exposure.
-###### Cryptographic risk
+##### Cryptographic risk
 The security of the Valyu DID system, which utilizes cryptographic keys based on the Secp256k1 and X25519 algorithms as outlined in SEC1 and RFC7748 respectively, is inherently tied to the cryptographic strength of these keys and their underlying algorithms. Should vulnerabilities be discovered in either Secp256k1 or X25519, or if advancements in quantum computing render these cryptographic foundations obsolete, the Valyu DID method could face significant security challenges. To mitigate these risks, ongoing evaluation and potential adaptation of emerging cryptographic techniques will be essential to maintain the robustness and security of the Valyu DID system.
-###### Self or Delegated Control
+##### Self or Delegated Control
 The Valyu DID specification accommodates diverse control structures by allowing the controller of a DID to be either the user directly or a delegated authority, such as an organisation or legal guardian. This flexibility is crucial for maintaining user autonomy and ensuring data sovereignty across varied legal and operational contexts.
 
-### References
-###### DID-CORE
+## References
+**DID-CORE**
 - [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/). Drummond Reed; Manu Sporny; Markus Sabadello; Dave Longley; Christopher Allen; Jonathan Holt; 2020-09-07. Status: WD.
 **DATA-TOKEN**
 - [Data assets: Tokenization and Valuation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590) Pithadia, Hirsh and Fenoglio, Enzo and Batrinca, Bogdan and Treleaven, Philip and Echim, Radu and Bubutanu, Andrei and Kerrigan, Charles, Data Assets: Tokenization and Valuation (April 15, 2023).
