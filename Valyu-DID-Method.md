@@ -138,7 +138,7 @@ To create a did:valyu, utilize the DID creation service integrated within the op
 ##### Prerequisites
 - Ensure that Docker is installed on your system as it is required to run the Valyu-DID software containers. Installation instructions for Docker can be found at Docker's official site.
 ##### Steps
-1. Pull the latest Valyu DID Docker image from the Docker Hub registry. Detailed instructions and necessary commands are provided in the repository documentation: [VALYU-DID-DOCS](www.github/valyu-network/ValyuDID/README.md)
+1. Pull the latest Valyu DID Docker image from the Docker Hub registry. Detailed instructions and necessary commands are provided in the repository documentation: [VALYU-DID-DOCS](https://github.com/valyu-network/valyu-did/tree/main/README.md)
 2. Run docker container.
 3. Once the Docker container is running, new Valyu DIDs can be created by invoking the /createDataDID, and /createUserDID endpoints via the provided API interfaces. The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint.
 
@@ -182,3 +182,5 @@ The Valyu DID specification accommodates diverse control structures by allowing 
 - [Data assets: Tokenization and Valuation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590) Pithadia, Hirsh and Fenoglio, Enzo and Batrinca, Bogdan and Treleaven, Philip and Echim, Radu and Bubutanu, Andrei and Kerrigan, Charles, Data Assets: Tokenization and Valuation (April 15, 2023).
 ##### VALYU-DID
 - [VALYU-DID](www.github/valyu-network/ValyuDID) Harvey Yorke (April 21, 2024)
+##### VALYU-DID-DOCS
+- [VALYU-DID-DOCS](https://github.com/valyu-network/valyu-did/tree/main/README.md) Harvey Yorke (April 21, 2024)
