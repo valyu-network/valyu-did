@@ -44,32 +44,25 @@ Example of a user DID Document:
 ```
 {
 	"@context": "https://www.w3.org/ns/did/v1",
-	"id": "did:valyu:user:{valyu-id}",
-	"controller": "did:valyu:user:{valyu-id}",
+	"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653",
+	"controller": "04f197e63902712e6be378de3b52d1350cc9df7de1158a43feebc18303a6f51e10736f109ace2365149e43b85cbb7d90fa315536cf0817cbf4bf55c60b50979d3d",
 	"verificationMethod": [
 		{
-		  "id": "did:valyu:user:{valyu-id}#pk1"
-		  "type": "Secp256k1VerificationKey2018",
-		  "controller": "did:valyu:user:{valyu-id}",
-		  "publicKeyHex": "[YOUR PUBLIC KEY IN HEX FORMAT HERE]"
+			"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1",
+			"type": "X25519",
+			"controller": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653",
+			"publicKeyHex": "1fc88700b171ef427e43268132994bedeba8c4b1af8b57733ab202c1a1cb4831"
 		}
 	],
-	"authentication: [
-		{
-		  "did:valyu:user:{valyu-id}#pk1"
-		}
-	],
-	"assertionMethod": [ 
-		{
-		   "did:valyu:user:{valyu-id}#pk1"
-		}
+	"authentication": [
+		"did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1"
 	],
 	"keyAgreement": [
 		{
-		  "id": "did:valyu:user:{valyu-id}#ka1",
-		  "type": "X25519KeyAgreementKey2019",
-		  "controller": "did:valyu:user:{valyu-id}",
-		  "publicKeyHex": "[YOUR PUBLIC KEY IN HEX FORMAT HERE]"
+			"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#key-exchange-1",
+	    		"type": "Secp256k1",
+			"controller": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653",
+	    		"publicKeyHex": "04f197e63902712e6be378de3b52d1350cc9df7de1158a43feebc18303a6f51e10736f109ace2365149e43b85cbb7d90fa315536cf0817cbf4bf55c60b50979d3d"
 		}
 	]
 }
