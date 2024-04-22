@@ -85,44 +85,37 @@ The DID Document represents a user in the valyu network identified by did:valyu:
 ---
 An example of a data DID Document:
 ```
-{ 
-	"@context": "https://www.w3.org/ns/did/v1",
-	"id": "did:valyu:data:{valyu-id}",
-	"controller": "did:valyu:data:{valyu-id}",
-	"verificationMethod": [
-		{
-		  "id": "did:valyu:user:{valyu-id}#pk1"
-		  "type": "Secp256k1",
-		  "controller": "did:valyu:user:{valyu-id}",
-		  "publicKeyJwt": ""
-		}
-	],
-	"assertionMethod": [ 
-		{
-		   "did:valyu:data:{valyu-id}#pk1"
-		}
-	],
-	"keyAgreement": [
-		{
-		  "id": "did:valyu:user:{valyu-id}#ka1",
-		  "type": "X25519",
-		  "controller": "did:valyu:user:{valyu-id}",
-		  "publicKeyHex": ""
-		}
-	],
-	"service": [
-		{
-		  "id": "#access",
-		  "type": "access",
-		  "serviceEndpoint": "dataservice.valyu.network/{...}"
-		},
-		{
-		  "id": "#compute",
-		  "type": "compute",
-		  "serviceEndpoint" : "dataservice.valyu.network/{...}"
-		}
-	]
-}
+{
+            "@context": "https://www.w3.org/ns/did/v1",
+            "id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
+            "controller": "04e82fd1fb711ea613faf994885ca0c0c660add2e4abb375d6b3ded0d9ccb0cb492f15bc9cc994db6ed79f20406951761e32f6c0f1d938b58e46805e07b0365608",
+            "verificationMethod": [
+                {
+                    "id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1",
+                    "type": "Secp256k1",
+                    "controller": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
+                    "publicKeyHex": "04e82fd1fb711ea613faf994885ca0c0c660add2e4abb375d6b3ded0d9ccb0cb492f15bc9cc994db6ed79f20406951761e32f6c0f1d938b58e46805e07b0365608"
+                }
+            ],
+            "assertionMethod": [
+                "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1"
+            ],
+            "keyAgreement": [
+                {
+                    "id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-exchange-1",
+                    "type": "X25519",
+                    "controller": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
+                    "publicKeyHex": "0879fe4df724af6d119b7efc564f21bed754976fbfdbf712dac30bd4f3f2aa3f"
+                }
+            ],
+            "service": [
+                {
+                    "id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#access",
+                    "type": "Access",
+                    "serviceEndpoint": "https://access-layer-endpoint-example"
+                }
+            ]
+        }
 ```
 
 The DID Document represents a data object in the valyu network with the identifier did:valyu:data:{valyu-id}.
