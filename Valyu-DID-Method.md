@@ -1,16 +1,16 @@
 # The VALYU DID Method Specification 1.0
 ## Abstract
-The `did:valyu` DID method [DID-CORE](https://github.com/valyu-network/valyu-did/edit/main/Valyu-DID-Method.md#DID-CORE) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used as part of a larger peer-to-peer fair data protocol.
+The `did:valyu` DID method [DID-CORE](https://www.w3.org/TR/did-core/) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used as part of a larger peer-to-peer fair data protocol.
 
 ## Terminology
 **Decentralized Identifier**
 - A [W3C specification](https://www.w3.org/TR/did-core/) describing an _identifier that enables verifiable, decentralized digital identity_. A DID identifier is associated with a JSON document containing cryptograhpic keys, services, and other properties outlined in the specification.
 
 **Data token**
-- An on-chain token representing ownership of the right to access / compute over a given dataset, under a specific policy. A data token is an implementation of the data tokenisation framework described in [DATA-TOKEN](https://github.com/valyu-network/valyu-did/edit/main/Valyu-DID-Method.md#DATA-TOKEN)
+- An on-chain token representing ownership of the right to access / compute over a given dataset, under a specific policy. A data token is an implementation of the data tokenisation framework described in [DATA-TOKEN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590)
 
 ## Format
-The format for `did:valyu` conforms to the [DID-CORE](https://github.com/valyu-network/valyu-did/edit/main/Valyu-DID-Method.md#DID-CORE) specification. It consists of the `did:valyu` prefix, followed by one of two types depending on whether the identifier is for a user, or data:
+The format for `did:valyu` conforms to the [DID-CORE](https://www.w3.org/TR/did-core/) specification. It consists of the `did:valyu` prefix, followed by one of two types depending on whether the identifier is for a user, or data:
 - User: `user:<ethereum-address>`
 - Data: `data:<chain-id><data-token-address>`
 Specifically, the format is as follows (Extended Backus-Naur Form):
