@@ -73,9 +73,9 @@ Example of a user DID Document:
 The DID Document represents a user in the valyu network identified by did:valyu:user:{valyu-id}.
 
 - **Controller**: The controller of this DID might be the user themselves or another entity, such as a parent or guardian in cases where the user might not have full control or autonomy over their data.
-- **Verification Method**: The document specifies a Secp256k1VerificationKey2018 as its verification method, with the public key provided in hex format. This key is under the control of the user's DID.
-- **Authentication**: Utilizing the aforementioned verification key (#pk1), this section ensures the user can be cryptographically verified when accessing their data within the valyu network.
-- **Assertion Method**: The user DID uses the verification key (#pk1) for generating zk-proofs.
+- **Authentication:** Utilizes the verification key for cryptographic authentication, ensuring the user's identity is verified when they engage within the network.
+- **Verification Method:** Specifies a Secp256k1VerificationKey2018 with the public key in hexadecimal format, confirming that all cryptographic operations are initiated and verified under the user's authority.
+- **Assertion Method:** The specified verification key is also used for generating cryptographic proofs (zk-SNARKs or similar zero-knowledge proofs) that support privacy-preserving authentication and authorization processes.
 - **Key Agreement:** Establishes an X25519 key agreement protocol to facilitate secure, encrypted communication and data transfer between the data object and authorized parties.
 
 ---
@@ -120,8 +120,9 @@ An example of a data DID Document:
 The DID Document represents a data object in the valyu network with the identifier did:valyu:data:{valyu-id}.
 
 - **Controller**: The data object is self-sovereign, signified by the controller being the data DID itself.
-- **Verification Method**: It incorporates a verification method with a key using the Secp256k1 elliptic curve. The controller for this verification key is associated with a user DID in the valyu ecosystem.
-- **Assertion Method**: This DID Document uses the previously mentioned verification method (#pk1) for generating zero-knowledge proofs on the data, ensuring data integrity and privacy without revealing the actual content.
+- **Authentication:** Utilizes the verification key for cryptographic authentication, ensuring the data's identity is verified when engaging in the data exchange protocol.
+- **Verification Method:** Specifies a Secp256k1VerificationKey2018 with the public key in hexadecimal format, confirming that all cryptographic operations are initiated and verified under the data's authority.
+- **Assertion Method:** The specified verification key is also used for generating cryptographic proofs (zk-SNARKs or similar zero-knowledge proofs) that support privacy-preserving authentication and authorization processes.
 - **Key Agreement:** Establishes an X25519 key agreement protocol to facilitate secure, encrypted communication and data transfer between the data object and authorized parties.
 - **Services**:
 	1. **Access Service**: Offers a direct link for secure data access, under specific polices, on the valyu network.
@@ -150,18 +151,18 @@ The DID creation process automatically creates a DID Document for each new DID c
 ##### Overview
 To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID](www.github/valyu-network/ValyuDID).
 ##### Prerequisites
-- Ensure all prerequisites outlined in the [DID-CREATION-ALGORITHM](www.github/valyu-network/ValyuDID/Valyu-DID-Method.md#DID-creation-algorithm) are met, as the setup for reading DIDs uses the same environment.
+- Ensure all prerequisites outlined in [DID Creation Algorithm](https://github.com/valyu-network/valyu-did/blob/main/Valyu-DID-Method.md#DID-creation-algorithm) are met, as the setup for reading DIDs uses the same environment.
 ##### Steps
-1. Follow steps 1 and 2 described in /DID-creation-algorithm
-2. Once the container is running, you can resolve a `did:valyu` value into it's corresponding DID Document by calling the /resolveDID endpoint
+1. Complete steps 1 and 2 from [DID Creation Algorithm](https://github.com/valyu-network/valyu-did/blob/main/Valyu-DID-Method.md#DID-creation-algorithm) to set up the Docker environment and run the Valyu-DID container.
+2. With the container running, invoke the /resolveDID endpoint to resolve a `did:valyu` identifier into its corresponding DID document.
 
-**Note:** The API endpoints have thorough documentation, you can find the Postman collection in the Github repository under the /postman directory
+**Note:** Again, the API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](www.github/valyu-network/ValyuDID) under the /postman directory
 
 ### Update
 This method does not *currently* support updating the DID document
 
 ### Deactivate
-This method does not support deactivating the DID document
+This method does not *currently* support deactivating the DID document
 
 ## Security and Privacy Considerations
 When implementing and using the `did:valyu` method, there are several security and privacy considerations to be aware of to ensure expected and legitimate behaviour.
@@ -179,3 +180,5 @@ The Valyu DID specification accommodates diverse control structures by allowing 
 - [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/). Drummond Reed; Manu Sporny; Markus Sabadello; Dave Longley; Christopher Allen; Jonathan Holt; 2020-09-07. Status: WD.
 ##### DATA-TOKEN
 - [Data assets: Tokenization and Valuation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590) Pithadia, Hirsh and Fenoglio, Enzo and Batrinca, Bogdan and Treleaven, Philip and Echim, Radu and Bubutanu, Andrei and Kerrigan, Charles, Data Assets: Tokenization and Valuation (April 15, 2023).
+##### VALYU-DID
+- [VALYU-DID](www.github/valyu-network/ValyuDID) Harvey Yorke (April 21, 2024)
