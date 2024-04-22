@@ -1,14 +1,23 @@
 # The VALYU DID Method Specification 1.0
 ### Abstract
-The `did:valyu` DID method [DID-CORE](https://did-dht.com/#ref:DID-CORE) provides a standardised format for representing both data and users within the Valyu ecosystem. By leveraging the decentralised nature of DIDs, Valyu ensures a robust, tamper-resistant, and universally verifiable system of identification. Whether you're a user contributing to the decentralised data economy or a piece of data being accessed by authorized entities, the Valyu DID is your passport in this new world of ethical data exchange. This document elaborates on the syntax, operations, and the security framework integral to the Valyu DID.
+The `did:valyu` DID method [DID-CORE](https://did-dht.com/#ref:DID-CORE) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used as part of a larger peer-to-peer fair data protocol.
 
-### Valyu DID Format
-The valyu DID method shall be identified by the method name `valyu` in lower case and follow the below given format:
+### Terminology
+**Decentralized Identifier**
+- A [W3C specification](https://www.w3.org/TR/did-core/) describing an _identifier that enables verifiable, decentralized digital identity_. A DID identifier is associated with a JSON document containing cryptograhpic keys, services, and other properties outlined in the specification.
+**Data token**
+- An on-chain token representing ownership of the right to access / compute over a given dataset, under a specific policy. A data token is an implementation of the data tokenisation framework described in [DATA-TOKEN](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590)
+
+### Format
+The format for `did:valyu` conforms to the [DID-CORE](https://did-dht.com/#ref:DID-CORE) specification. It consists of the `did:valyu` prefix, followed by one of two types depending on whether the identifier is for a user, or data:
+- User: `user:<ethereum-address>`
+- Data: `data:<chain-id><data-token-address>`
+Specifically, the format is as follows (Extended Backus-Naur Form):
 ```
 <did-value> ::= "did:valyu:" <did-type> ":" <valyu-id>
 <did-type> ::= "user" | "data"
 <valyu-id> ::= <chain-id> ":" <ethereum-address>
-<chain-id> ::= <HEXDIG>
+<chain-id> ::= <HEXDIG>+
 <ethereum-address> ::= "0x" <40HEXDIG>
 
 <HEXDIG> ::= [0-9A-F]
@@ -17,6 +26,17 @@ The valyu DID method shall be identified by the method name `valyu` in lower cas
 <38HEXDIG> ::= <HEXDIG> <37HEXDIG> | <HEXDIG>
 ...
 <1HEXDIG> ::= <HEXDIG>
+```
+
+A simple example of a valid `did:valyu` DID for both `user`, and `data`:
+
+**User** - User DID, with an ethereum address 
+```
+did:valyu:user:0x9c8c0eA52F40daB8460353778f9b180Db33A4a9c
+```
+**Data** - Data DID, with a data token address deployed to Ethereum Mainnet (chain id 0x1)
+```
+did:valyu:user:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c
 ```
 
 ### Status of the document
@@ -145,7 +165,7 @@ To read/resolve a `did:valyu` value, use the DID resolution service provided as 
 1. Follow steps 1 and 2 described in /DID-creation-algorithm
 2. Once the container is running, you can resolve a `did:valyu` value into it's corresponding DID Document by calling the /resolveDID endpoint
 
-**Note:** The API endpoints have thorough documentation, you can find the Postman collection here: https://api.postman.com/collections/30064176-1c83c789-8580-47d4-8778-1f110f370423?access_key=PMAT-01HW1BWC7376NQYN8CMKZ1VV7G, or in the Github repository under the /postman directory
+**Note:** The API endpoints have thorough documentation, you can find the Postman collection in the Github repository under the /postman directory
 
 #### Update
 This method does not *currently* support updating the DID document
@@ -167,3 +187,5 @@ The Valyu DID specification accommodates diverse control structures by allowing 
 ### References
 ###### DID-CORE
 - [Decentralized Identifiers (DIDs) v1.0](https://www.w3.org/TR/did-core/). Drummond Reed; Manu Sporny; Markus Sabadello; Dave Longley; Christopher Allen; Jonathan Holt; 2020-09-07. Status: WD.
+**DATA-TOKEN**
+- [Data assets: Tokenization and Valuation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590) Pithadia, Hirsh and Fenoglio, Enzo and Batrinca, Bogdan and Treleaven, Philip and Echim, Radu and Bubutanu, Andrei and Kerrigan, Charles, Data Assets: Tokenization and Valuation (April 15, 2023).
