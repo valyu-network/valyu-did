@@ -46,7 +46,7 @@ Example of a user DID Document:
 	"@context": "https://www.w3.org/ns/did/v1",
 	"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653",
 	"controller": "04f197e63902712e6be378de3b52d1350cc9df7de1158a43feebc18303a6f51e10736f109ace2365149e43b85cbb7d90fa315536cf0817cbf4bf55c60b50979d3d",
-	"verificationMethod": [
+	"authenticationMethod": [
 		{
 			"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1",
 			"type": "X25519",
@@ -54,7 +54,10 @@ Example of a user DID Document:
 			"publicKeyHex": "1fc88700b171ef427e43268132994bedeba8c4b1af8b57733ab202c1a1cb4831"
 		}
 	],
-	"authentication": [
+	"verificationMethod": [
+		"did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1"
+	],
+	"assertionMethod": [
 		"did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1"
 	],
 	"keyAgreement": [
@@ -73,7 +76,7 @@ The DID Document represents a user in the valyu network identified by did:valyu:
 - **Verification Method**: The document specifies a Secp256k1VerificationKey2018 as its verification method, with the public key provided in hex format. This key is under the control of the user's DID.
 - **Authentication**: Utilizing the aforementioned verification key (#pk1), this section ensures the user can be cryptographically verified when accessing their data within the valyu network.
 - **Assertion Method**: The user DID uses the verification key (#pk1) for generating zk-proofs.
-- **Key Agreement**: The document establishes a key agreement protocol using the X25519KeyAgreementKey2019. The public key for this protocol is also provided in hex format. This mechanism ensures secure communications and encrypted exchanges between the user and other entities on the valyu network.
+- **Key Agreement:** Establishes an X25519 key agreement protocol to facilitate secure, encrypted communication and data transfer between the data object and authorized parties.
 
 ---
 An example of a data DID Document:
@@ -82,13 +85,16 @@ An example of a data DID Document:
 	"@context": "https://www.w3.org/ns/did/v1",
 	"id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
 	"controller": "04e82fd1fb711ea613faf994885ca0c0c660add2e4abb375d6b3ded0d9ccb0cb492f15bc9cc994db6ed79f20406951761e32f6c0f1d938b58e46805e07b0365608",
-	"verificationMethod": [
+	"authenticationMethod": [
 		{
 			"id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1",
                     	"type": "Secp256k1",
 			"controller": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
 			"publicKeyHex": "04e82fd1fb711ea613faf994885ca0c0c660add2e4abb375d6b3ded0d9ccb0cb492f15bc9cc994db6ed79f20406951761e32f6c0f1d938b58e46805e07b0365608"
                 }
+	],
+	"verificationMethod": [
+		"did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1"
 	],
 	"assertionMethod": [
 		"did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1"
@@ -116,10 +122,10 @@ The DID Document represents a data object in the valyu network with the identifi
 - **Controller**: The data object is self-sovereign, signified by the controller being the data DID itself.
 - **Verification Method**: It incorporates a verification method with a key using the Secp256k1 elliptic curve. The controller for this verification key is associated with a user DID in the valyu ecosystem.
 - **Assertion Method**: This DID Document uses the previously mentioned verification method (#pk1) for generating zero-knowledge proofs on the data, ensuring data integrity and privacy without revealing the actual content.
-- **Key Agreement**: An X25519 key agreement mechanism is set up, pointing again to a user DID, meant for the data access layer. This ensures secure, encrypted access and exchange of data between parties.
+- **Key Agreement:** Establishes an X25519 key agreement protocol to facilitate secure, encrypted communication and data transfer between the data object and authorized parties.
 - **Services**:
-	1. **Access Service**: Offers a direct link for accessing the data on the valyu network via a specific access key.
-	2. **Compute Service**: Provides a computing endpoint, facilitating operations or transformations on the data using a specific compute key.
+	1. **Access Service**: Offers a direct link for secure data access, under specific polices, on the valyu network.
+	2. **Compute Service**: Provides a data compute endpoint, facilitating secure operations or transformations on the data.
 
 ## Operations
 
