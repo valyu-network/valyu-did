@@ -133,23 +133,24 @@ This following section outlines the DID operations for the `did:valyu` method
 ### Create
 #### DID creation algorithm
 ##### Overview
-To create a `did:valyu`, use the DID creation service provided as part of the open-source Valyu-DID software (available in the following Github repository: www.github/valyu-networl/ValyuDID). This repository is well documented on the key generation process, and leverages Veramo.io. The process is as follows:
+To create a did:valyu, utilize the DID creation service integrated within the open-source Valyu-DID software. The software repository is accessible on GitHub at Valyu-DID Repository and provides comprehensive documentation on the key generation process, leveraging the Veramo.io framework. The steps involved in the DID creation process are outlined as follows:
 ##### Prerequisites
-- Docker installed on your machine. If Docker is not installed, follow the Docker installation guide.
+- Ensure that Docker is installed on your system as it is required to run the Valyu-DID software containers. Installation instructions for Docker can be found at Docker's official site.
 ##### Steps
-1. Pull the Valyu DID docker image from the dockerhub registry (details on how to do this are provided in: www.github/valyu-networl/ValyuDID)
-2. Run docker container
-3. Once the container is running, you can create a Valyu User or Data DID by calling the /createDID endpoint 
+1. Pull the latest Valyu DID Docker image from the Docker Hub registry. Detailed instructions and necessary commands are provided in the repository documentation: [VALYU-DID-DOCS](www.github/valyu-network/ValyuDID/README.md)
+2. Run docker container.
+3. Once the Docker container is running, new Valyu DIDs can be created by invoking the /createDataDID, and /createUserDID endpoints via the provided API interfaces. The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint.
 
-**Note:** The API endpoints have thorough documentation, you can find the Postman collection in the Github repository under the /postman directory
+**Note:** The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](www.github/valyu-network/ValyuDID) under the /postman directory
+
 #### Document creation algorithm
 The DID creation process automatically creates a DID Document for each new DID created
 
 ### Read
 ##### Overview
-To read/resolve a `did:valyu` value, use the DID resolution service provided as part of the open-source Valyu-DID software (available in the following Github repository: www.github/valyu-networl/ValyuDID)
+To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID](www.github/valyu-network/ValyuDID).
 ##### Prerequisites
-- Refer to prerequisites described in /DID-creation-algorithm
+- Ensure all prerequisites outlined in the [DID-CREATION-ALGORITHM](www.github/valyu-network/ValyuDID/Valyu-DID-Method.md#DID-creation-algorithm) are met, as the setup for reading DIDs uses the same environment.
 ##### Steps
 1. Follow steps 1 and 2 described in /DID-creation-algorithm
 2. Once the container is running, you can resolve a `did:valyu` value into it's corresponding DID Document by calling the /resolveDID endpoint
