@@ -18,15 +18,11 @@ Specifically, the format is as follows (Extended Backus-Naur Form):
 <did-value> ::= "did:valyu:" <did-type> ":" <valyu-id>
 <did-type> ::= "user" | "data"
 <valyu-id> ::= <chain-id> ":" <ethereum-address>
-<chain-id> ::= <HEXDIG>+
-<ethereum-address> ::= "0x" <40HEXDIG>
+<chain-id> ::= <hexdigit>+
+<ethereum-address> ::= "0x" <40hexdigit>
 
-<HEXDIG> ::= [0-9A-F]
-<40HEXDIG> ::= <HEXDIG> <39HEXDIG> | <HEXDIG>
-<39HEXDIG> ::= <HEXDIG> <38HEXDIG> | <HEXDIG>
-<38HEXDIG> ::= <HEXDIG> <37HEXDIG> | <HEXDIG>
-...
-<1HEXDIG> ::= <HEXDIG>
+<hexdigit> ::= [0-9A-Fa-f]
+<40hexdigit> ::= <hexdigit> {39}
 ```
 
 A simple example of a valid `did:valyu` DID for both `user`, and `data`:
