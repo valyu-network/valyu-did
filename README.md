@@ -9,7 +9,7 @@ ValyuDID offers a set of endpoints designed for managing decentralized identifie
 ## Getting Started 🚀
 
 ### Dependencies 🧰
-This project heavily relies on the Veramo framework, which is crucial for managing the lifecycle of decentralized identifiers and their associated cryptographic operations. Dor more details on Veramo, please visit their [official documentation](https://veramo.io/docs/basics/introduction)
+This project heavily relies on the Veramo framework, which is crucial for managing the lifecycle of decentralized identifiers and their associated cryptographic operations. For more details on Veramo, please visit their [official documentation](https://veramo.io/docs/basics/introduction)
 
 ### Prerequisites 📋
 
