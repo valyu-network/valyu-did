@@ -4,7 +4,7 @@ Welcome to the ValyuDID repository. This project implements the Valyu DID method
 
 ## Overview 📖
 
-ValyuDID offers a set of endpoints designed for managing decentralized identifiers (DIDs). It enables the creation of new DIDs for users and data, as well as the resolution of existing DIDs, using a custom-built resolver, and provider, based on the Veramo framework.
+ValyuDID offers a set of endpoints designed for managing decentralized identifiers (DIDs). It enables the creation of new DIDs for users and data, as well as the resolution of existing DIDs, using a custom-built resolver, and provider, leveraging the Veramo framework.
 
 ## Getting Started 🚀
 
