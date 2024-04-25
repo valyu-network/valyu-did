@@ -154,4 +154,4 @@ We welcome contributions from the community! Please follow these steps:
 
 ## License 📄
 
-This project is currently unlicensed and proprietary. Please contact us for any inquiries regarding usage or licensing.
+This project is currently licensed under `MIT`, see LICENSE.md
