@@ -46,7 +46,7 @@ Example of a user DID Document:
 	"@context": "https://www.w3.org/ns/did/v1",
 	"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653",
 	"controller": "04f197e63902712e6be378de3b52d1350cc9df7de1158a43feebc18303a6f51e10736f109ace2365149e43b85cbb7d90fa315536cf0817cbf4bf55c60b50979d3d",
-	"authenticationMethod": [
+	"authentication": [
 		{
 			"id": "did:valyu:user:0x8b96279b2f902d878c00790d5c772b747032c653#ethereum-key-1",
 			"type": "X25519",
@@ -85,7 +85,7 @@ An example of a data DID Document:
 	"@context": "https://www.w3.org/ns/did/v1",
 	"id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c",
 	"controller": "04e82fd1fb711ea613faf994885ca0c0c660add2e4abb375d6b3ded0d9ccb0cb492f15bc9cc994db6ed79f20406951761e32f6c0f1d938b58e46805e07b0365608",
-	"authenticationMethod": [
+	"authentication": [
 		{
 			"id": "did:valyu:data:10xhc8c0eA52F40d4B8460353778f9b180Db33A4a9c#key-1",
                     	"type": "Secp256k1",
