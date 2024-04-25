@@ -1,6 +1,6 @@
 # The VALYU DID Method Specification 1.0
 ## Abstract
-The `did:valyu` DID method [DID-CORE](https://www.w3.org/TR/did-core/) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used within a peer-to-peer fair data exchange protocol.
+The `did:valyu` DID method [DID-CORE](https://www.w3.org/TR/did-core/) provides a standardised format for representing both data and users within the Valyu data ecosystem. Used within a distributed fair data tokenisation and exchange protocol.
 
 ## Terminology
 **Decentralized Identifier**
