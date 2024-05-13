@@ -149,7 +149,7 @@ The DID creation process automatically creates a DID Document for each new DID c
 
 ### Read
 ##### Overview
-To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID]([www.github/valyu-network/ValyuDID](https://github.com/valyu-network/valyu-did)).
+To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID](https://github.com/valyu-network/valyu-did).
 ##### Prerequisites
 - Ensure all prerequisites outlined in [DID Creation Algorithm](https://github.com/valyu-network/valyu-did/blob/main/Valyu-DID-Method.md#DID-creation-algorithm) are met, as the setup for reading DIDs uses the same environment.
 ##### Steps
