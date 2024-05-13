@@ -142,21 +142,21 @@ To create a did:valyu, utilize the DID creation service integrated within the op
 2. Run docker container.
 3. Once the Docker container is running, new Valyu DIDs can be created by invoking the /createDataDID, and /createUserDID endpoints via the provided API interfaces. The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint.
 
-**Note:** The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](www.github/valyu-network/ValyuDID) under the /postman directory
+**Note:** The API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](https://github.com/valyu-network/valyu-did) under the /postman directory
 
 #### Document creation algorithm
 The DID creation process automatically creates a DID Document for each new DID created
 
 ### Read
 ##### Overview
-To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID](www.github/valyu-network/ValyuDID).
+To read or resolve a did:valyu identifier, utilize the DID resolution service provided by the open-source Valyu-DID software, available in [VALYU-DID]([www.github/valyu-network/ValyuDID](https://github.com/valyu-network/valyu-did)).
 ##### Prerequisites
 - Ensure all prerequisites outlined in [DID Creation Algorithm](https://github.com/valyu-network/valyu-did/blob/main/Valyu-DID-Method.md#DID-creation-algorithm) are met, as the setup for reading DIDs uses the same environment.
 ##### Steps
 1. Complete steps 1 and 2 from [DID Creation Algorithm](https://github.com/valyu-network/valyu-did/blob/main/Valyu-DID-Method.md#DID-creation-algorithm) to set up the Docker environment and run the Valyu-DID container.
 2. With the container running, invoke the /resolveDID endpoint to resolve a `did:valyu` identifier into its corresponding DID document.
 
-**Note:** Again, the API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](www.github/valyu-network/ValyuDID) under the /postman directory
+**Note:** Again, the API is well-documented with a Postman collection available in the repository to facilitate interaction with the endpoint, you can find the Postman collection in [VALYU-DID](https://github.com/valyu-network/valyu-did) under the /postman directory
 
 ### Update
 This method does not *currently* support updating the DID document
@@ -181,6 +181,6 @@ The Valyu DID specification accommodates diverse control structures by allowing 
 ##### DATA-TOKEN
 - [Data assets: Tokenization and Valuation](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4419590) Pithadia, Hirsh and Fenoglio, Enzo and Batrinca, Bogdan and Treleaven, Philip and Echim, Radu and Bubutanu, Andrei and Kerrigan, Charles, Data Assets: Tokenization and Valuation (April 15, 2023).
 ##### VALYU-DID
-- [VALYU-DID](www.github/valyu-network/ValyuDID) Harvey Yorke (April 21, 2024)
+- [VALYU-DID](https://github.com/valyu-network/valyu-did) Harvey Yorke (April 21, 2024)
 ##### VALYU-DID-DOCS
 - [VALYU-DID-DOCS](https://github.com/valyu-network/valyu-did/tree/main/README.md) Harvey Yorke (April 21, 2024)
